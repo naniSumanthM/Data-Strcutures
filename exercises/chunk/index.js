@@ -20,7 +20,6 @@ let chunk = (array, size) => {
       last.push(element);
     }
   }
-
   return chunked;
 };
 
