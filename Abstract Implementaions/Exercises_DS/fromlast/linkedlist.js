@@ -1,7 +1,3 @@
-// --- Directions
-// Implement classes Node and Linked Lists
-// See 'directions' document
-
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -23,8 +19,8 @@ class LinkedList {
     let node = this.head;
 
     while (node) {
-      node = node.next;
       counter++;
+      node = node.next;
     }
 
     return counter;
@@ -98,8 +94,9 @@ class LinkedList {
       if (counter === index) {
         return node;
       }
-      node = node.next;
+
       counter++;
+      node = node.next;
     }
     return null;
   }
