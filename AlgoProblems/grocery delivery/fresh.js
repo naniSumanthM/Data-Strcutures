@@ -17,3 +17,4 @@ for (let location in location_map) {
 }
 
 console.log(sortable.sort());
+//Approach - O(n^2)

@@ -49,3 +49,9 @@ console.log(
     [[1, 2], [2, 3], [3, 4], [4, 5]]
   )
 );
+
+//Approach - O(n^2)
+//https://stackoverflow.com/questions/31158902/is-it-possible-to-sort-a-es6-map-object#
+//https://stackoverflow.com/questions/3298477/get-first-key-from-javascript-object
+//https://stackoverflow.com/questions/32539354/how-to-get-the-first-element-of-set-in-es6-ecmascript-2015
+//https://stackoverflow.com/questions/28718641/transforming-a-javascript-iterator-into-an-array
