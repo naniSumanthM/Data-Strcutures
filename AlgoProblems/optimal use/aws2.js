@@ -2,40 +2,32 @@
 //https://stackoverflow.com/questions/15907052/trying-to-add-multiple-properties-to-javascript-object-using-a-loop#
 
 let optimalUtilization = (capacity, fApps, bApps) => {
-  let memoryObjects = [];
+  let exactCapacity = [];
+  let closeCapacity = [];
   let output = [];
 
   for (let i = 0; i < fApps.length; i++) {
     for (let j = 0; j < bApps.length; j++) {
       let usage = fApps[i][1] + bApps[j][1];
-      let maxUsage;
       if (usage === capacity) {
-        maxUsage = true;
-      } else {
-        maxUsage = false;
+        exactCapacity.push({
+          id: [fApps[i][0], bApps[j][0]],
+          usage: usage
+        });
+      } else if (usage < capacity) {
+        closeCapacity.push({
+          id: [fApps[i][0], bApps[j][0]],
+          usage: usage
+        });
       }
-      memoryObjects.push({
-        id: [fApps[i][0], bApps[j][0]],
-        usage: usage,
-        max: maxUsage
-      });
     }
   }
-
-  let sortable = memoryObjects
-    .sort((a, b) => {
-      let compare = 0;
-      if (a.max === true || b.max === true) {
-        compare = 1;
-      }
-      return compare;
-    })
-    .reverse();
-
-  for (device of sortable) {
-    if (device.max) {
-      output.push(device.id);
+  if (exactCapacity.length >= 1) {
+    for (let i = 0; i < exactCapacity.length; i++) {
+      output.push(exactCapacity[i].id);
     }
+  } else if (closeCapacity.length >= 1) {
+    output.push(closeCapacity.reverse()[0].id);
   }
   return output;
 };
