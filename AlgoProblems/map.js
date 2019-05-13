@@ -29,7 +29,22 @@ console.log([...m.keys()]);
 //convert values to array
 console.log([...m.values()]);
 
-//----{} Map-----//
+let myMap = new Map();
+myMap.set(224, "Sumanth");
+myMap.set(513, "Rishika");
+
+let sortableMap = new Map([...myMap.entries()].sort().reverse());
+console.log(Array.from(sortableMap.keys()));
+
+for (let [k, v] of myMap) {
+  console.log(k, v);
+}
+
+for (let [k, v] of myMap.entries()) {
+  console.log([k, v]);
+}
+
+//-----------------OBJECT-------------------//
 
 var obj1 = { id: 1, name: "Sumanth" };
 //retreive elements
