@@ -42,3 +42,6 @@ console.log(
     [[1, 2], [2, 3], [3, 4], [4, 5]]
   )
 );
+
+//[{id: x, apps: [a,b], maxuse: true},
+//{ id: x, apps: [a, b], maxuse: true }]

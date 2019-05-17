@@ -4,14 +4,15 @@ let twoSum1 = (arr, target) => {
     let temp = target - arr[i];
     if (temp >= 0 && s.has(temp)) {
       console.log(temp, arr[i], `${temp} + ${arr[i]} = ${temp + arr[i]}`);
+      console.log(temp, arr[i]);
     }
     s.add(arr[i]);
   }
 };
 
-//console.log(twoSum1([1, 3, 2, 5, 3], 6));
+console.log(twoSum1([1, 3, 2, 5, 3], 6));
 
-let twoSum = (array, target) => {
+let twoSum2 = (array, target) => {
   let set = new Set();
   for (let i = 0; i < array.length; i++) {
     let remaining = target - array[i];
@@ -25,8 +26,6 @@ let twoSum = (array, target) => {
   }
 };
 
-twoSum([2, 3, 5], 6);
-
 let twoSumx = (nums, target) => {
   let hashMap = new Map();
   for (let i = 0; i < nums.length; i++) {
@@ -38,5 +37,3 @@ let twoSumx = (nums, target) => {
     }
   }
 };
-
-console.log(twoSumx([1, 2, 3], 4));

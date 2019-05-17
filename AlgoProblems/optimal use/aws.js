@@ -55,3 +55,5 @@ console.log(optimalUtilization(7, [[1, 2], [2, 4], [3, 6]], [[1, 2]]));
 //https://stackoverflow.com/questions/3298477/get-first-key-from-javascript-object
 //https://stackoverflow.com/questions/32539354/how-to-get-the-first-element-of-set-in-es6-ecmascript-2015
 //https://stackoverflow.com/questions/28718641/transforming-a-javascript-iterator-into-an-array
+
+//[{pcId: 10, appIDs: [x,y], maxUse: true}]
