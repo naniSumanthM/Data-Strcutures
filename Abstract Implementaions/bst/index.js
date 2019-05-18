@@ -11,9 +11,11 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
-//Binary Search Tree, has one root, and only two children per parent
+//Binary Search Tree, has one root, and only two children per parent - left children.value < right children.value
 //Binary Tree- Skips Rules of BST
 //Trie - Nodes represent alphabets to form words
+//AVl or Red Black Trees - self balancing trees
+//Heaps - Min or Max - insertion from left to right, children are < || > root, new nodes bubble up.
 
 class Node {
   constructor(data) {
