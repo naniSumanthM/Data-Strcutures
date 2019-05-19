@@ -21,7 +21,7 @@ let fib = n => {
 //can be improved by meomization
 let fib2 = n => {
   if (n < 2) {
-    return;
+    return n;
   }
   return fib(n - 1) + fib(n - 2);
 };
