@@ -5,7 +5,7 @@ var heroes = [
   { name: "Superman", franchise: "DC" }
 ];
 
-var marvelHeroes = heroes.filter(function(hero) {
+var marvelHeroes = heroes.filter(function (hero) {
   return hero.franchise == "Marvel";
 });
 
