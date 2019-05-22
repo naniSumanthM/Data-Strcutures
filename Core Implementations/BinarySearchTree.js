@@ -222,6 +222,7 @@ console.log('BFSr', tree.breadthFirstSearch([tree.root], []));
 console.log('DFS-In:Order', tree.depthFirstSearchInorder());
 console.log('DFS-Pre:Order', tree.depthFirstSearchPreOrder());
 console.log('DFS-Post:Order', tree.depthFirstSearchPostOrder());
+
 //     9
 //  4     20
 //1  6  15  170
