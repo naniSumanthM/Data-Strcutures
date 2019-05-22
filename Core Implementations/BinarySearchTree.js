@@ -145,9 +145,67 @@ class BinarySearchTree {
     }
     return list;
   }
-  breadthFirstSearchR() {
+  breadthFirstSearchR(queue, list) {
+    if (!queue.length) {
+      return list;
+    }
+    let currentNode = queue.shift();
+    list.push(currentNode.value)
 
+    if (currentNode.left) {
+      queue.push(currentNode.left)
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right)
+    }
+
+    return this.breadthFirstSearchR(queue, list)
   }
+  depthFirstSearchInorder(queue, list) {
+    return traverseInOrder(this.root, []);
+  }
+  depthFirstSearchPreOrder(queue, list) {
+    return traversePreOrder(this.root, []);
+  }
+  depthFirstSearchPostOrder(queue, list) {
+    return traversePostOrder(this.root, []);
+  }
+}
+//left, root, right
+let traverseInOrder = (node, list) => {
+  if (node.left) {
+    traverseInOrder(node.left, list);
+  }
+  list.push(node.value);
+
+  if (node.right) {
+    traverseInOrder(node.right, list);
+  }
+  return list;
+}
+
+//root, left, right
+let traversePreOrder = (node, list) => {
+  list.push(node.value);
+  if (node.left) {
+    traversePreOrder(node.left, list);
+  }
+  if (node.right) {
+    traversePreOrder(node.right, list);
+  }
+  return list;
+}
+
+//left, right, root
+let traversePostOrder = (node, list) => {
+  if (node.left) {
+    traversePostOrder(node.left, list);
+  }
+  if (node.right) {
+    traversePostOrder(node.right, list);
+  }
+  list.push(node.value);
+  return list;
 }
 
 const tree = new BinarySearchTree();
@@ -160,7 +218,10 @@ tree.insert(15)
 tree.insert(1)
 
 console.log('BFS', tree.breadthFirstSearch());
-
+console.log('BFSr', tree.breadthFirstSearch([tree.root], []));
+console.log('DFS-In:Order', tree.depthFirstSearchInorder());
+console.log('DFS-Pre:Order', tree.depthFirstSearchPreOrder());
+console.log('DFS-Post:Order', tree.depthFirstSearchPostOrder());
 //     9
 //  4     20
 //1  6  15  170
@@ -171,3 +232,5 @@ let traverse = node => {
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
 };
+
+
