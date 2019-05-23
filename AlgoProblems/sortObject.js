@@ -1,3 +1,4 @@
+//https://alligator.io/js/filter-array-method/
 var heroes = [
   { name: "Batman", franchise: "DC" },
   { name: "Ironman", franchise: "Marvel" },
@@ -15,4 +16,4 @@ let realMarvelHeroes = heroes.filter(hero => {
 
 console.log(realMarvelHeroes);
 
-//https://alligator.io/js/filter-array-method/
+
