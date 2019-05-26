@@ -30,30 +30,21 @@
 /// Output = 6 5
 /// </summary>
 
-let getMovieShots = (shots) => {
-    let startMap = new Map();
-    let endMap = new Map();
-    let list = [];
-
-    for (let i = 0; i < shots.length; i++) {
-        if (!startMap.has(shots[i])) {
-            startMap.set(shots[i], i)
-            list.push(shots[i])
-        } else {
-            endMap.set(shots[i], i)
+let getMovieShots = (input) => {
+    let startIndex = 0;
+    let lastIndex = 0;
+    const arr = [];
+    for (let i = 0; i < input.length; i++) {
+        const currLast = input.lastIndexOf(input[i]);
+        if (currLast > lastIndex) {
+            lastIndex = currLast;
+        }
+        if (lastIndex === i) {
+            arr.push(input.slice(startIndex, lastIndex + 1));
+            startIndex = lastIndex + 1;
         }
     }
-
-    for (let item of startMap) {
-        let startIndex = startMap.get(item)
-
-    }
-
+    return arr.map(a => a.length);
 }
 
-//Then you can just use the list to compare
-//If the start index of one element in the list is 
-//larger than the largest end index of previous elements, you can get a partition here.
-
-
-console.log(getMovieShots(["a", "b", "a", "b", "c", "b", "a", "c", "a", "d", "e", "f", "e", "g", "d", "e", "h", "i", "j", "h", "k", "l", "i", "j"]));
+console.log(getMovieShots(["z", "z", "c", "b", "z", "c", "h", "f", "i", "h", "i"]));
