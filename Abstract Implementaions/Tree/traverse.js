@@ -64,5 +64,3 @@ let postordeRec = (root, list = []) => {
     list.push(root.val)
     return list;
 };
-
-console.log();

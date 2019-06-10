@@ -1,4 +1,5 @@
 //https://www.geeksforgeeks.org/gcd-two-array-numbers/
+//https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
 
 let getGCD = (num1, num2) => {
   if (num2 === 0) {

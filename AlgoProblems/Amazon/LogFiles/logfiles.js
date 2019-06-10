@@ -1,13 +1,14 @@
 let reorderLogFiles = (logs) => {
-    let letter = [], digit = [];
-    for (let v of logs) {
-        if (v.split(" ")[1].charAt(0) >= '0' && v.split(" ")[1].charAt(0) <= '9') {
-            digit.push(v);
+    let letter = []
+    let digit = [];
+    for (let line of logs) {
+        if (line.split(" ")[1].charAt(0) >= '0' && line.split(" ")[1].charAt(0) <= '9') {
+            digit.push(line);
         } else {
-            letter.push(v);
+            letter.push(line);
         }
     }
-    letter.sort(function (a, b) {
+    letter.sort((a, b) => {
         return a.split(" ")[1].localeCompare(b.split(" ")[1]) || a.split(" ")[2].localeCompare(b.split(" ")[2])
     })
     return letter.concat(digit);

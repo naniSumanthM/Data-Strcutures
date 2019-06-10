@@ -49,4 +49,4 @@ let cellState = (cells, days) => {
   return newCells;
 };
 
-console.log(cellState([1, 1, 1, 0, 1, 1, 1, 1], 2));
+console.log(cellState([1, 1, 1, 0, 1, 1, 1, 1,], 2));

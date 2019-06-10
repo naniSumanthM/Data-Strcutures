@@ -51,3 +51,6 @@ let mergeSortedArrays2 = (arr1, arr2) => {
 console.log(mergeSortedArrays2([1, 6, 7], [2, 4, 6]));
 
 //console.log(mergeSortedArrays([0, 3, 4, 31], [3, 4, 6, 30]));
+
+
+//https://dev.to/benhayehudi/merging-arrays-in-javascript-8gn

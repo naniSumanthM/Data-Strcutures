@@ -31,6 +31,7 @@ let optimalUtilization = (
     ).keys();
     output = Array.from(sortedDeviceMap);
   } else if (closeOptimalUse.size >= 1) {
+    //we are only getting the mostly closely utilized memory pair of app ids
     let closeSortedDeviceMap = new Map(
       [...closeOptimalUse.entries()].sort().reverse()
     ).keys();
@@ -42,13 +43,13 @@ let optimalUtilization = (
 
 console.log(optimalUtilization(7, [[1, 2], [2, 4], [3, 6]], [[1, 2]]));
 
-// console.log(
-//   optimalUtilization(
-//     10,
-//     [[1, 3], [2, 5], [3, 7], [4, 10]],
-//     [[1, 2], [2, 3], [3, 4], [4, 5]]
-//   )
-// );
+console.log(
+  optimalUtilization(
+    10,
+    [[1, 3], [2, 5], [3, 7], [4, 10]],
+    [[1, 2], [2, 3], [3, 4], [4, 5]]
+  )
+);
 
 //Approach - O(n^2)
 //https://stackoverflow.com/questions/31158902/is-it-possible-to-sort-a-es6-map-object#
