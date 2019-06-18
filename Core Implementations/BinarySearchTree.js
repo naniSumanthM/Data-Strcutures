@@ -183,7 +183,6 @@ let traverseInOrder = (node, list) => {
   }
   return list;
 }
-
 //root, left, right
 let traversePreOrder = (node, list) => {
   list.push(node.value);
@@ -195,7 +194,6 @@ let traversePreOrder = (node, list) => {
   }
   return list;
 }
-
 //left, right, root
 let traversePostOrder = (node, list) => {
   if (node.left) {
@@ -217,21 +215,69 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 
-console.log('BFS', tree.breadthFirstSearch());
-console.log('BFSr', tree.breadthFirstSearch([tree.root], []));
-console.log('DFS-In:Order', tree.depthFirstSearchInorder());
-console.log('DFS-Pre:Order', tree.depthFirstSearchPreOrder());
-console.log('DFS-Post:Order', tree.depthFirstSearchPostOrder());
+// console.log('BFS', tree.breadthFirstSearch());
+// console.log('BFSr', tree.breadthFirstSearch([tree.root], []));
+// console.log('DFS-In:Order', tree.depthFirstSearchInorder());
+// console.log('DFS-Pre:Order', tree.depthFirstSearchPreOrder());
+// console.log('DFS-Post:Order', tree.depthFirstSearchPostOrder());
 
 //     9
 //  4     20
 //1  6  15  170
 
-let traverse = node => {
-  const tree = { value: node.value };
-  tree.left = node.left === null ? null : traverse(node.left);
-  tree.right = node.right === null ? null : traverse(node.right);
-  return tree;
-};
+// let traverse = node => {
+//   const tree = { value: node.value };
+//   tree.left = node.left === null ? null : traverse(node.left);
+//   tree.right = node.right === null ? null : traverse(node.right);
+//   return tree;
+// };
+
+//left, root, right
+let inOrder = (root) => {
+  let stack = []
+  let list = []
+  if (!root) return list
+
+  while (root != null || stack.length > 0) {
+    while (root != null) {
+      stack.push(root)
+      root = root.left
+    }
+    root = stack.pop()
+    list.push(root.value)
+    root = root.right
+  }
+  return list;
+}
+//console.log(inOrder(tree.root));
+
+//root, left, right
+let preOrder = (root) => {
+  let nodeStack = []
+  let list = []
+  if (!root) return false
+  nodeStack.push(root)
+
+  while (nodeStack.length > 0) {
+    let node = nodeStack[nodeStack.length - 1]
+    list.push(node.value)
+    nodeStack.pop()
+
+    if (node.right != null) {
+      nodeStack.push(node.right)
+    }
+    if (node.left != null) {
+      nodeStack.push(node.left)
+    }
+  }
+  return list
+}
+//console.log(preOrder(tree.root));
 
 
+//left, right, root
+let postOrder = (root) => {
+  let nodeStack = []
+  let list = []
+
+}

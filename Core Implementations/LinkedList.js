@@ -11,8 +11,7 @@ class LinkedList {
     const newNode = {
       value: value,
       next: null
-    };
-    console.log(newNode);
+    }
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -22,7 +21,7 @@ class LinkedList {
     const newNode = {
       value: value,
       next: null
-    };
+    }
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
@@ -32,22 +31,22 @@ class LinkedList {
     const array = [];
     let currentNode = this.head;
     while (currentNode !== null) {
-      array.push(currentNode.value);
-      currentNode = currentNode.next;
+      array.push(currentNode.value)
+      currentNode = currentNode.next
     }
     return array;
   }
   insert(index, value) {
     //Check for proper parameters;
     if (index >= this.length) {
-      console.log("yes");
+      console.log('yes')
       return this.append(value);
     }
 
     const newNode = {
       value: value,
       next: null
-    };
+    }
     const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
@@ -66,7 +65,7 @@ class LinkedList {
     return currentNode;
   }
   remove(index) {
-    // Check Parameters
+    // Check Parameters      
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
@@ -94,13 +93,27 @@ class LinkedList {
   }
 }
 
-let myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.printList();
-myLinkedList.insert(2, 99);
-myLinkedList.insert(20, 88);
-myLinkedList.printList();
-myLinkedList.remove(2);
-myLinkedList.reverse();
+let l1 = new LinkedList(1);
+l1.append(3);
+l1.append(5);
+let l2 = new LinkedList(2);
+l2.append(4);
+l2.append(6);
+
+let mergetList = (l1, l2) => {
+  let list = new LinkedList(0);
+  let a = l1.head;
+  let b = l2.head;
+
+  while (a !== null && b != null) {
+    if (a.value < b.value) {
+      list.append(a.value)
+      a = a.next;
+    } else {
+      list.append(b.value)
+      b = b.next;
+    }
+  }
+  return list.printList()
+}
+console.log(mergetList(l1, l2));
