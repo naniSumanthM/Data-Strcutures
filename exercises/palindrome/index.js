@@ -21,4 +21,13 @@ let palindrome = str => {
 
 // return str.split("").reverse().join("") === str ? true : false;
 
+//Leetcode
+let isPalindrome = (s) => {
+  let strippedString = s.replace(/\W/g, '').toLowerCase()
+  let reversedString = strippedString.split('').reverse().join('').toLowerCase()
+  return strippedString == reversedString
+};
+//console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+
 module.exports = palindrome;
