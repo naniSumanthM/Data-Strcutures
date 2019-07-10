@@ -6,8 +6,8 @@ let firstReversedWord = (input) => {
         if (words[i].length > 1) {
             currentWord = words[i].split('').reverse().join('')
         }
-        for (let j = 0; j < words.length; j++) {
-            if (currentWord == words[j + 1]) {
+        for (let j = i + 1; j < words.length; j++) {
+            if (currentWord == words[j]) {
                 return words[i]
             }
         }

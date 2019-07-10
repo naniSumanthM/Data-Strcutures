@@ -16,7 +16,7 @@ let mostFrequest = (array, frequency) => {
   return Math.max(...output); //Math.max.apply(null, output)
 };
 
-console.log(mostFrequest([1, 2, 3, 2, 1, 2, 2, 2, 3], 2));
+console.log(mostFrequest([3, 1, 4, 4, 5, 5, 2, 6, 1], 2));
 
 //https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
 //https://medium.com/front-end-weekly/es6-map-vs-object-what-and-when-b80621932373

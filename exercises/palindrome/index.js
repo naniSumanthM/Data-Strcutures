@@ -13,13 +13,8 @@ let palindrome = str => {
     .reverse()
     .join("");
 
-  if (reversedString === str) {
-    return true;
-  }
-  return false;
+  reversedString === str ? true : false
 };
-
-// return str.split("").reverse().join("") === str ? true : false;
 
 //Leetcode
 let isPalindrome = (s) => {
@@ -28,6 +23,5 @@ let isPalindrome = (s) => {
   return strippedString == reversedString
 };
 //console.log(isPalindrome("A man, a plan, a canal: Panama"));
-
 
 module.exports = palindrome;

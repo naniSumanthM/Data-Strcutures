@@ -12,3 +12,4 @@ let countingPairs = (arr, target) => {
     return map.size;
 }
 console.log(countingPairs([1, 1, 1, 2], 1));
+
