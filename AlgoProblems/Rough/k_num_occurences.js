@@ -14,6 +14,6 @@ let kNumberOccurences = (array, k) => {
             output.push(key);
         }
     }
-    return output.sort((a, b) => b - a)
+    return output.sort((a, b) => a - b)
 }
 console.log(kNumberOccurences([3, 1, 4, 4, 5, 2, 6, 1], 2));

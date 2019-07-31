@@ -1,3 +1,4 @@
+//https://leetcode.com/discuss/interview-question/124652/Amazon-onsite-interview-question
 // Michelle has created a word game for her students.The word game begins with Michelle writing a string and a number, K, on the board.
 // The students must find a substring of size K such that there is exactly one character that is repeated one;
 // in other words, there should be k - 1 distinct characters in the substring.

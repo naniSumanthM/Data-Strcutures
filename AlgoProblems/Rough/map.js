@@ -1,4 +1,5 @@
 //initialize new Map
+//https://javascript.info/keys-values-entries#object-fromentries-to-transform-objects
 const m = new Map([["color", "brown"], ["owner", "self"], ["age", 2]]);
 m.set("citizen", false);
 

@@ -1,9 +1,8 @@
 //sort array of objects
-
 let item = [
   { itemName: "Candy", price: 3.5, discountRate: 1 },
   { itemName: "Veggies", price: 1.5, discountRate: 0.5 },
-  { itemName: "Chicekn", price: 5.0, discountRate: 3 }
+  { itemName: "Chicken", price: 5.0, discountRate: 3 }
 ];
 
 console.log(

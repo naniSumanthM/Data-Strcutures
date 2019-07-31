@@ -1,4 +1,5 @@
 /// <summary>
+///https://leetcode.com/discuss/interview-question/124652/amazon-onsite-interview-question
 /// You are working on developing a movie with Amazon Video and want to devise an application to easily break up individual shots 
 /// (short sequence from a particular camera angle) in a video into scenes (a sequence of shots).  
 /// Each shot is labeled with a letter. There is already an algorithm that breaks the video up into shots and labels them.

@@ -6,14 +6,10 @@ var heroes = [
   { name: "Superman", franchise: "DC" }
 ];
 
-var marvelHeroes = heroes.filter(function (hero) {
+var marvelHeroes = heroes.filter((hero) => {
   return hero.franchise == "Marvel";
 });
 
-let realMarvelHeroes = heroes.filter(hero => {
-  return realMarvelHeroes.map((x = x.max == true));
-});
-
-console.log(realMarvelHeroes);
+console.log(marvelHeroes);
 
 
